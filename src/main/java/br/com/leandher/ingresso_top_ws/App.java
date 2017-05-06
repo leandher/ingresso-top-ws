@@ -1,4 +1,4 @@
-package br.com.invistatech.sucessows;
+package br.com.leandher.ingresso_top_ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,15 +11,15 @@ import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 
 
 @SpringBootApplication
-public class Config extends SpringBootServletInitializer{
+public class App extends SpringBootServletInitializer{
 
 	 public static void main(String[] args){
-        SpringApplication.run(Config.class, args);
+        SpringApplication.run(App.class, args);
 	 }
 
 	 @Override
 	 protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Config.class);
+        return application.sources(App.class);
 	 }   
 
 	@Bean
