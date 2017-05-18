@@ -1,6 +1,7 @@
 package br.com.leandher.ingresso_top_ws;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 
 @SpringBootApplication
+@EnableAutoConfiguration
 public class Config extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
