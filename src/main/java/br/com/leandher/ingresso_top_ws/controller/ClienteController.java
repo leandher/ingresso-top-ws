@@ -20,7 +20,7 @@ import br.com.leandher.ingresso_top_ws.service.ClienteService;
 
 @Transactional
 @CrossOrigin("*")	
-@RequestMapping("/cliente")
+@RequestMapping("/api/cliente")
 @Controller
 public class ClienteController {
 
@@ -55,4 +55,8 @@ public class ClienteController {
 		return new ResponseEntity<Cliente>(HttpStatus.OK);
 	}
 
+	@RequestMapping(value="/login",  method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Cliente> login(@RequestBody Cliente cliente){
+		return new ResponseEntity<Cliente>(clienteService.save(cliente), HttpStatus.OK);
+	}
 }
