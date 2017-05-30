@@ -33,4 +33,8 @@ public class ClienteService {
 	public void deleta(Long id){
 		 clienteRepository.delete(id);
 	}
+	
+	public Cliente login(Cliente c){
+		return clienteRepository.login(c.getEmail(), c.getSenha());
+	}
 }

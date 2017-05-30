@@ -57,6 +57,11 @@ public class ClienteController {
 
 	@RequestMapping(value="/login",  method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Cliente> login(@RequestBody Cliente cliente){
-		return new ResponseEntity<Cliente>(clienteService.save(cliente), HttpStatus.OK);
+		Cliente c = clienteService.login(cliente);
+		if(c != null){
+			return new ResponseEntity<Cliente>(c, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<Cliente>(c, HttpStatus.FORBIDDEN);
+		}
 	}
 }
